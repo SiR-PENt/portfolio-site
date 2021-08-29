@@ -1,67 +1,130 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-*{
-	box-sizing:border-box;
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+
+
+:root {
+     scroll-behavior: smooth;
 }
-img {
-	display:flex;
-	justify-content:center;
-	margin:0 auto;
-	max-width:500px;
+*    {
+	box-sizing:border-box;
+	margin:0;
+	padding:0;
 }
 body {
-	font-family:'Poppins', montserrat;
-	background-color: #A52CD8;
+	font-family:'Poppins', montserrat;	background-color: rgb(110,196,110);	
 }
-.container {
-	margin:auto;
-	width:70%;
+.name {
+	position: relative; 
+    height:100vh;
+    width: 100%;
+	padding:auto;
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
+	align-items:center;
+
 }
-.profile {
+.name::before{
+	content: "";
+	background-image: url("/image/suko.jpg");
+	background-size: cover;
+	background-position:center;
+	background-repeat:no-repeat;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	opacity: 0.75;	
+	box-shadow:5px,15px,10px,10px,white;
+}
+
+.tagline1{
+	font-size:7vw;
 	position:relative;
-	bottom:10px;
-}
-@media (max-width:500px)
-h3 {
-	color:#302BD8;
+	padding:auto;
+	color:white;
+	padding-top:15%;
 	font-weight:900;
+
 }
-h4{
-	color:#2C99D8;
+div.tagline1 > span {
+	font-weight:600;
+	color:rgb(110, 196, 110);
 }
-header p {
-    position:relative;
-	bottom: 20px;
-}
-.nav-bar {
-	background-color:#302BD8;
-	border-top:3px solid #302BD8;
-	border-bottom:3px solid #302BD8;
-	position:sticky;
-	top:10px;
-	
-}
-div > ul {
+ul.tagline2 {
+	font-weight:600;
+    font-size:1.5rem;
+	list-style: none;
+	position: relative;
 	display: flex;
-	flex-wrap:wrap;
-	list-style:none;
-	margin:auto;
+	color:rgb(110, 196, 110);
 }
-li {
-	margin:5px 10px;
-	text-decoration: none;
+li > span.tagline2a {
+     color:white;
 }
-ul {
- display:flex;
- flex-wrap: wrap;
- list-style:none;
- width:100%;
+.chevron{
+    animation: bounce ;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-play-state: running;
+    animation-name: bounce;
 }
-.skills {
-	margin:10px 10px;
-	padding:3px;
-	width:fit-content;
-	margin-top:2px;
-	background-color:#2C99D8;
-	border-radius:5px;
+
+.chevronContainer:hover{
+	transform:scale(1.1);
 }
+
+@keyframes bounce{
+	0% { 
+		top:0px 
+	}
+	100%{
+		top:20px
+	}
+}
+.containerBelowHeader{
+	padding-top:20px;
+	background-color:white;
+}
+div.forAbout{
+	text-align:center;
+    color:#309661;
+	font-size:30px;
+}
+
+span.about{
+	display:inline-block;
+	background-color:#309661;
+	width:70px;
+	height:5px;
+	margin-bottom: 5px;;
+	border-radius:2px;
+    font-size:20px;
+}
+
+div.iconMe{
+	text-align:center;
+	padding:40px 10px 0px 10px;
+}
+div.iconMe > p {
+	padding-top:30px;
+}
+
+@media only screen and (max-width: 383px){
+	/*for the header */
+ul.tagline2 {
+	flex-direction:column
+}
+ul.tagline2 {
+	font-size: 1rem;
+}
+li > span.tagline2a{
+	visibility: hidden;
+}
+}
+
